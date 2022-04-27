@@ -1,6 +1,10 @@
 import { of, from } from "rxjs";
 import { distinctUntilChanged } from "rxjs/operators";
 
+const numeros$ = of(1, "1", 2, 3, 3, 3, 2, 2, 2, 5, 1);
+
+numeros$.pipe(distinctUntilChanged()).subscribe(console.log);
+
 interface Personaje {
   nombre: string;
 }
